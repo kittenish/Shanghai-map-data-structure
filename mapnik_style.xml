@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <Map background-color="#f2efe9" srs="+proj=latlong +datum=WGS84">
+	<FontSet name="book-fonts">
+		<Font face-name="DejaVu Sans Book" />
+	</FontSet>
+	<Style name="highways">
+		<Rule>
+			<Filter>[highway] = 'primary'</Filter>
+			<LineSymbolizer stroke="#F5923E" stroke-opacity="1.0" stroke-width="10" stroke-linejoin="round"
+				stroke-linecap="round" />
+
+		</Rule>
+		<Rule>
+			<Filter>[highway] = 'secondary'</Filter>
+			<LineSymbolizer stroke="#34B2CC" stroke-opacity="1.0" stroke-width="2" stroke-linejoin="round"
+				stroke-linecap="round" />
+
+		</Rule>
+		<Rule>
+			<Filter>[highway] = 'motorway'</Filter>
+			<LineSymbolizer stroke="#FF0000" stroke-opacity="1.0" stroke-width="2" stroke-linejoin="round"
+				stroke-linecap="round" />
+
+		</Rule>
+		<Rule>
+			<Filter>[highway] = 'bus_stop'</Filter>
+			<LineSymbolizer stroke="#6C487F" stroke-opacity="1.0" stroke-width="2" stroke-linejoin="round"
+				stroke-linecap="round" />
+
+		</Rule>
+		<Rule>
+			<Filter>[highway] = 'trunk'</Filter>
+			<LineSymbolizer stroke="#39A95E" stroke-opacity="1.0" stroke-width="3" stroke-linejoin="round"
+				stroke-linecap="round" />
+
+		</Rule>
+		<Rule>
+			<Filter>[highway] &lt;&gt; ''</Filter>
+			<LineSymbolizer stroke="#808080" stroke-opacity="1.0" stroke-width="2" stroke-linejoin="round"
+				stroke-linecap="round" />
+
+		</Rule>
+		<Rule>
+			<Filter>[highway] &lt;&gt;''</Filter>
+			<TextSymbolizer  fontset-name="book-fonts" size="9" fill="#0000" halo-radius="1" placement="line" />
+		</Rule> 
+	</Style>
+	<Layer name="highways" status="on" srs="+proj=latlong +datum=WGS84">
+		<StyleName>highways</StyleName>
+		<Datasource>
+			<Parameter name="type">osm</Parameter>
+			<Parameter name="file">shanghai_map.xml</Parameter>
+		</Datasource>
+	</Layer>
+ </Map>
